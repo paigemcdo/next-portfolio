@@ -12,6 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      gradientColorStops: {
+        "violet-50": "#f5f3ff",
+        "indigo-50": "#eef2ff",
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'spin-slower': 'spin 5s linear infinite',
+      },
     },
   },
   plugins: [],
