@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";  // Uncommented Image import
+import { relative } from "path";
 
 export default function Home() {
   const fadeInUp = {
@@ -34,6 +35,7 @@ export default function Home() {
       <main className="max-w-6xl mx-auto px-8 py-20 space-y-32">
         {/* Hero Section */}
         <motion.section 
+          id="about"
           initial="initial"
           animate="animate"
           className="flex flex-col sm:flex-row items-center gap-12"
@@ -44,7 +46,7 @@ export default function Home() {
               <span className="block text-violet-600">Building the Future</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Hello! I&apos;m a Computer Engineering student at the University of Toronto with over two years of experience in object-oriented programming (OOP) seeking a 4-16 month Software/Hardware Engineering coop starting in May 2025.
+              Hello! I&apos;m a Computer Engineering student at the University of Toronto with over three years of experience in various fields including object-oriented programming (C, C++), embedded systems (FPGA, Verilog). I am currently seeking a 4-16 month Software or Hardware Engineering co-op starting in May 2025.
             </p>
             <div className="flex gap-4">
               <a
@@ -87,9 +89,9 @@ export default function Home() {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold">Education</h3>
             <div className="space-y-2">
-              <p className="font-semibold">University of Toronto</p>
-              <p className="text-gray-600 dark:text-gray-300">Bachelor of Applied Science in Computer Engineering</p>
-              <p className="text-gray-600 dark:text-gray-300">2021 - Present</p>
+              <p className="font-semibold">Bachelor of Applied Science in Computer Engineering</p>
+              <p className="text-gray-600 dark:text-gray-300">University of Toronto | Expected 2027</p>
+              <p className="text-gray-600 dark:text-gray-300"></p>
               <ul className="list-disc list-inside text-gray-600 dark:text-gray-300">
                 <li>Edward S Rogers Sr. Admission Scholarship (2021)</li>
                 <li>Dean&apos;s Merit Award (2021)</li>
@@ -105,7 +107,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="font-semibold">Embedded Systems</p>
-                <p className="text-gray-600 dark:text-gray-300">Passionate about the seamless integration of hardware and software in embedded systems, seeking opportunities in cutting-edge technologies.</p>
+                <p className="text-gray-600 dark:text-gray-300">Passionate about seamless integration of hardware and software in embedded systems, seeking opportunities in cutting-edge technologies.</p>
               </div>
             </div>
           </div>
@@ -129,17 +131,17 @@ export default function Home() {
             {[
               {
                 title: "Detecting Eeveelutions",
-                description: "A deep learning object detection model that can identify different Pokémon Eeveelutions in images and video streams. Built using TensorFlow and trained on a custom dataset, this project demonstrates the application of computer vision techniques in a fun and engaging way.",
+                description: "A deep learning object detection model that can identify different Pokémon Eeveelutions within images. Built using TensorFlow and trained on a custom dataset using transfer learning on Densenet, this project demonstrates the application of computer vision techniques in a fun and engaging way.",
                 tech: ["Python", "TensorFlow", "Computer Vision", "Deep Learning"],
-                image: "/projects/eeveelutions.jpg",
+                image: "/detectingEeveelutions.png",
                 demo: "https://github.com/paigemcdo/eeveelutions",
                 icon: "🤖"
               },
               {
                 title: "FPGA Donkey Kong",
-                description: "A reimagining of the classic arcade game Donkey Kong implemented on an FPGA platform. Features custom hardware design, real-time graphics rendering, and responsive game controls. This project showcases the intersection of digital design and gaming.",
-                tech: ["VHDL", "FPGA", "Digital Design", "Game Development"],
-                image: "/projects/donkey-kong.jpg",
+                description: "A reimagining of the classic arcade game Donkey Kong implemented on an FPGA platform. Features custom hardware design, real-time signal processing and graphics rendering, and reactive audio. This project showcases the intersection of digital design and gaming.",
+                tech: ["C", "FPGA", "Digital Design", "Game Development"],
+                image: "/donkeyKong.png",
                 demo: "https://github.com/paigemcdo/fpga-dk",
                 icon: "🎮"
               },
@@ -147,7 +149,7 @@ export default function Home() {
                 title: "Zenith - GIS Development",
                 description: "Developed a route-finding map application using C++ and OpenStreetMaps API. Implemented various pathfinding algorithms including Dijkstra, A*, and Greedy algorithm with 3-/4-OPT optimization for efficient route calculation across multiple cities.",
                 tech: ["C++", "OpenStreetMaps API", "Algorithms", "Data Structures"],
-                image: "/projects/zenith.jpg",
+                image: "/zenith.png",
                 demo: "https://github.com/paigemcdo/zenith",
                 icon: "🗺️"
               }
@@ -161,9 +163,13 @@ export default function Home() {
                 transition={{ delay: index * 0.2 }}
               >
                 <div className="w-full md:w-1/2 aspect-video relative overflow-hidden rounded-xl group bg-gray-200 dark:bg-gray-700">
-                  {/* Placeholder for project images */}
                   <div className="absolute inset-0 flex items-center justify-center text-4xl">
-                    {project.icon}
+                    <Image
+                      src={project.image}
+                      alt="Project Image"
+                      width={700}
+                      height={500}
+                    />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-6">
@@ -219,8 +225,8 @@ export default function Home() {
             {...fadeInUp}
           >
             {[
-              { title: "Languages", icon: "💻", skills: ["Python", "C/C++", "VHDL", "JavaScript"] },
-              { title: "Technologies", icon: "⚙️", skills: ["TensorFlow", "PyTorch", "Git", "Linux"] },
+              { title: "Languages", icon: "💻", skills: ["Python", "C/C++", "C#", "VHDL", "JavaScript", "HTML/CSS", "Verilog", "MATLAB"] },
+              { title: "Technologies", icon: "⚙️", skills: ["TensorFlow", "PyTorch", "Git", "Linux", "AutoCAD", "React", "ModelSim"] },
               { title: "Hardware", icon: "🔧", skills: ["FPGA", "Microcontrollers", "Digital Design", "PCB Design"] },
             ].map((category) => (
               <motion.div
@@ -260,7 +266,7 @@ export default function Home() {
             className="text-lg text-gray-600 dark:text-gray-300"
             {...fadeInUp}
           >
-            Looking for 4-16 month internship opportunities starting May 2025!
+            Looking for 4-16 month internship opportunities starting in May 2025!
           </motion.p>
           <motion.div 
             className="flex justify-center gap-6"
