@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";  // Uncommented Image import
-import { relative } from "path";
 
 export default function Home() {
   const fadeInUp = {
