@@ -101,12 +101,12 @@ export default function Home() {
             <h3 className="text-2xl font-bold">Aspirations</h3>
             <div className="space-y-4">
               <div>
-                <p className="font-semibold">Front-End Development</p>
-                <p className="text-gray-600 dark:text-gray-300">Looking to kickstart my journey in front-end development, eager to contribute to projects involving HTML, CSS, and JavaScript.</p>
+                <p className="font-semibold">Full-Stack Development</p>
+                <p className="text-gray-600 dark:text-gray-300">I am passionate about full-stack development, with hands-on experience in JavaScript, Python, C++, and frameworks like React. My interests involve designing sleek, user-focused front-end interfaces and building efficient, scalable back-end systems. I thrive on creating seamless, end-to-end solutions that leave a lasting impact. I&apos;m excited to bring my blend of technical skills and creativity to innovative projects.</p>
               </div>
               <div>
                 <p className="font-semibold">Embedded Systems</p>
-                <p className="text-gray-600 dark:text-gray-300">Passionate about seamless integration of hardware and software in embedded systems, seeking opportunities in cutting-edge technologies.</p>
+                <p className="text-gray-600 dark:text-gray-300">I am passionate about embedded systems and hardware development, with experience in C++, Verilog, and FPGA design. I enjoy working at the intersection of hardware and software, creating efficient, low-level systems that bring innovative ideas to life. From optimizing performance to tackling complex design challenges, I thrive on building reliable solutions that seamlessly integrate technology.</p>
               </div>
             </div>
           </div>
@@ -170,6 +170,8 @@ export default function Home() {
                       height={500}
                     />
                   </div>
+                  
+                  {/* __image demo button__
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-6">
                       <a
@@ -181,7 +183,7 @@ export default function Home() {
                         View Project →
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="w-full md:w-1/2 space-y-4">
                   <div className="flex items-center gap-2">
