@@ -42,7 +42,7 @@ export default function Home() {
           <motion.div className="flex-1 space-y-6" variants={fadeInUp}>
             <h2 className="text-5xl font-bold">
               Software Engineer
-              <span className="block text-violet-600">Building the Future</span>
+              <span className="block text-violet-600 animate-pulse">Under Construction</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               Hello! I&apos;m a Computer Engineering student at the University of Toronto with over three years of experience in various fields including object-oriented programming (C, C++), embedded systems (FPGA, Verilog). I am currently seeking a 4-16 month Software or Hardware Engineering co-op starting in May 2025.
@@ -102,11 +102,13 @@ export default function Home() {
             <div className="space-y-4">
               <div>
                 <p className="font-semibold">Full-Stack Development</p>
-                <p className="text-gray-600 dark:text-gray-300">I am passionate about full-stack development, with hands-on experience in JavaScript, Python, C++, and frameworks like React. My interests involve designing sleek, user-focused front-end interfaces and building efficient, scalable back-end systems. I thrive on creating seamless, end-to-end solutions that leave a lasting impact. I&apos;m excited to bring my blend of technical skills and creativity to innovative projects.</p>
+                <p className="text-gray-600 dark:text-gray-300">I enjoy working across the whole stack. Building stuff that looks good and actually works is super satisfying. I’ve used JavaScript, Python, C++, and frameworks like React. I like putting things together in a way that feels smooth and makes sense. There’s something fun about getting both the frontend and backend to click, and I love the creative side of it just as much as the logic.</p>
               </div>
               <div>
                 <p className="font-semibold">Embedded Systems</p>
-                <p className="text-gray-600 dark:text-gray-300">I am passionate about embedded systems and hardware development, with experience in C++, Verilog, and FPGA design. I enjoy working at the intersection of hardware and software, creating efficient, low-level systems that bring innovative ideas to life. From optimizing performance to tackling complex design challenges, I thrive on building reliable solutions that seamlessly integrate technology.</p>
+                <p className="text-gray-600 dark:text-gray-300">Embedded stuff is where I get to nerd out a bit. I like the low-level, hardware meets software kind of thing. I’ve worked with C/C++, Verilog, and FPGAs, and I actually enjoy the debugging and figuring-out-why-it’s-not-doing-what-it-should kind of problems. It’s super satisfying getting something to work exactly how you want it to, especially when it’s all happening under the hood.
+
+</p>
               </div>
             </div>
           </div>
@@ -129,28 +131,44 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-16">
             {[
               {
-                title: "Detecting Eeveelutions",
-                description: "A deep learning object detection model that can identify different Pokémon Eeveelutions within images. Built using TensorFlow and trained on a custom dataset using transfer learning on Densenet, this project demonstrates the application of computer vision techniques in a fun and engaging way.",
+                title: "Colour Sorter • Embedded System",
+                date: "March 2025",
+                description: "An automatic colour sorting system implemented on an STM32 microcontroller. Objects move along a DC motor powered conveyor belt while a camera, using real-time image processing, determines the colour and sets a signal to trigger the corresponding servo powered push arm to dismount the object into its respective bin. Built from scratch with low-level camera interfacing, UART debugging, and motor timing.",
+                tech: ["Embedded C", "STM32", "Embedded System", "Real-Time Processing"],
+                image: "/colourSorter.png",
+                video: "/colourSorterDemo.mp4",
+                demo: "https://github.com/paigemcdo/colour-yeeter",
+                //icon: ""
+              },
+              {
+                title: "Detecting Eeveelutions • Deep Learning Model",
+                date: "August 2024",
+                description: "A deep learning object detection model trained to identify specific Pokémon evolutions within images. Built using TensorFlow and trained on a custom dataset using transfer learning on Densenet, this project demonstrates the application of computer vision techniques in a fun and engaging way.",
                 tech: ["Python", "TensorFlow", "Computer Vision", "Deep Learning"],
                 image: "/detectingEeveelutions.png",
+                video: null,
                 demo: "https://github.com/paigemcdo/eeveelutions",
-                icon: "🤖"
+                // icon: "🤖"
               },
               {
-                title: "FPGA Donkey Kong",
-                description: "A reimagining of the classic arcade game Donkey Kong implemented on an FPGA platform. Features custom hardware design, real-time signal processing and graphics rendering, and reactive audio. This project showcases the intersection of digital design and gaming.",
-                tech: ["C", "FPGA", "Digital Design", "Game Development"],
+                title: "Donkey Kong • FPGA Game Development",
+                date: "March 2024",
+                description: "A Donkey Kong inspired arcade game implemented on an FPGA platform using C. Designed VGA output, sound effects, and game logic using finite state machines and real-time signal control. Showcases tight integration of digital design and gameplay systems.",
+                tech: ["C", "FPGA", "VGA", "Digital Logic", "Game Development"],
                 image: "/donkeyKong.png",
+                video: null,
                 demo: "https://github.com/paigemcdo/fpga-dk",
-                icon: "🎮"
+                // icon: "🎮"
               },
               {
-                title: "Zenith - GIS Development",
-                description: "Developed a route-finding map application using C++ and OpenStreetMaps API. Implemented various pathfinding algorithms including Dijkstra, A*, and Greedy algorithm with 3-/4-OPT optimization for efficient route calculation across multiple cities.",
+                title: "Zenith • GIS Development",
+                date: "July 2023",
+                description: "Developed a route-finding map application using C++ and OpenStreetMaps API. Implemented efficient pathfinding algorithms using Dijkstra, A*, and Greedy algorithm with 3-/4-OPT optimization to support cross-city routing. Features a custom rendering engine for map visualizations.",
                 tech: ["C++", "OpenStreetMaps API", "Algorithms", "Data Structures"],
                 image: "/zenith.png",
+                video: null,
                 demo: "https://github.com/paigemcdo/zenith",
-                icon: "🗺️"
+                // icon: "🗺️"
               }
             ].map((project, index) => (
               <motion.div
@@ -161,16 +179,34 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
               >
-                <div className="w-full md:w-1/2 aspect-video relative overflow-hidden rounded-xl group bg-gray-200 dark:bg-gray-700">
-                  <div className="absolute inset-0 flex items-center justify-center text-4xl">
-                    <Image
-                      src={project.image}
-                      alt="Project Image"
-                      width={700}
-                      height={500}
-                    />
-                  </div>
-                  
+              <div className="w-full md:w-1/2 aspect-video relative overflow-hidden rounded-xl group bg-gray-200 dark:bg-gray-700">
+                {/* awlays show image */}
+                <Image
+                  src={project.image || "/fallback.png"}  // fallback optional
+                  alt={`${project.title} preview`}
+                  width={700}
+                  height={500}
+                  className="w-full h-full object-cover transition-opacity duration-300"
+                />
+                {/* overlay video if it exists */}
+                {project.video && (
+                  <video
+                    src={project.video}
+                    muted
+                    loop
+                    playsInline
+                    className="absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    ref={(el) => {
+                      if (!el) return;
+                      const parent = el.closest(".group");
+                      parent?.addEventListener("mouseenter", () => el.play());
+                      parent?.addEventListener("mouseleave", () => {
+                        el.pause();
+                        el.currentTime = 0;
+                      });
+                    }}
+                  />
+                )}
                   {/* __image demo button__
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-6">
@@ -185,11 +221,12 @@ export default function Home() {
                     </div>
                   </div> */}
                 </div>
-                <div className="w-full md:w-1/2 space-y-4">
+                <div className="w-full md:w-1/2 space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl">{project.icon}</span>
-                    <h3 className="text-2xl font-bold">{project.title}</h3>
+                    {/* <span className="text-2xl">{project.icon}</span> */}
+                    <h3 className="text-xl font-bold">{project.title}</h3>
                   </div>
+                  <p className="text-sm italic text-gray-500 dark:text-gray-400">{project.date}</p>
                   <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
@@ -267,7 +304,7 @@ export default function Home() {
             className="text-lg text-gray-600 dark:text-gray-300"
             {...fadeInUp}
           >
-            Looking for 4-16 month internship opportunities starting in May 2025!
+            Looking for 4-16 month internship opportunities starting in Summer 2025!
           </motion.p>
           <motion.div 
             className="flex justify-center gap-6"
@@ -291,7 +328,7 @@ export default function Home() {
 
       <footer className="border-t border-gray-200 dark:border-gray-800 p-8">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <p>© 2024 Paige McDougall</p>
+          <p>© 2025 Paige McDougall</p>
           <div className="flex gap-6">
             <a href="https://github.com/paigemcdo" className="hover:text-violet-600 transition-colors">
               GitHub
