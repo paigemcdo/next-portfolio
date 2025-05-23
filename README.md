@@ -1,4 +1,4 @@
-# 🧑‍💻 Paige McDougall | Portfolio Website
+## 🧑‍💻 Paige McDougall | Portfolio Website
 
 This is my [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com/) personal portfolio project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). It showcases my projects, skills, and experience as a Computer Engineering student at the University of Toronto.
 
