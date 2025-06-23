@@ -42,10 +42,14 @@ export default function Home() {
           <motion.div className="flex-1 space-y-6" variants={fadeInUp}>
             <h2 className="text-5xl font-bold">
               Software Engineer
-              <span className="block text-violet-600 animate-pulse">Under Construction</span>
+              <span className="block text-violet-600 animate-pulse text-4xl">Take a seat, stay awhile!</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Hello! I&apos;m a Computer Engineering student at the University of Toronto with over three years of experience in various fields including object-oriented programming (C, C++), embedded systems (FPGA, Verilog). I am currently seeking a 4-16 month Software or Hardware Engineering co-op starting in May 2025.
+              Hello! I'm a Computer Engineering student at the University of Toronto with a love for building… well, just about everything.
+              From low-level embedded systems to fullstack web applications, I’m always chasing that “aha” moment where everything clicks
+              into place. When it comes to engineering I’m drawn to both the creative and technical sides of it, and I find the most fun
+              happens at the intersection of code, hardware, and design. At the root of it all is a strong desire to grow and learn, as
+              both an engineer and a person.
             </p>
             <div className="flex gap-4">
               <a
@@ -82,9 +86,30 @@ export default function Home() {
         </motion.section>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-1 gap-8"
           {...fadeInUp}
         >
+            <h3 className="text-2xl font-bold">Aspirations</h3>
+            <div className="grid grid-cols-2">
+              <div>
+                <p className="font-semibold">Full-Stack Development</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  I enjoy working across the whole stack, satisfying my underlying passion for creative design on the frontend
+                  and my love for a good puzzle on the backend. I make every design choice with the end user in mind, ensuring
+                  that the experience feels smooth and intuitive. There’s something so satisfying about getting the frontend
+                  and backend to click, and I love the artistic side of development just as much as the logic behind it.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold">Embedded Systems</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  I enjoy working close to the hardware, satisfying my curiosity for how things work under the hood and my love
+                  for hands-on, ground-up system building. I’ve developed embedded projects using C, C++, and Verilog across
+                  platforms like STM32 and FPGAs. From motor control to real-time signal processing, I focus on writing efficient,
+                  reliable code that interfaces seamlessly with hardware.
+                </p>
+              </div>
+            </div>
           <div className="space-y-4">
             <h3 className="text-2xl font-bold">Education</h3>
             <div className="space-y-2">
@@ -97,23 +122,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold">Aspirations</h3>
-            <div className="space-y-4">
-              <div>
-                <p className="font-semibold">Full-Stack Development</p>
-                <p className="text-gray-600 dark:text-gray-300">I enjoy working across the whole stack. Building stuff that looks good and actually works is super satisfying. I’ve used JavaScript, Python, C++, and frameworks like React. I like putting things together in a way that feels smooth and makes sense. There’s something fun about getting both the frontend and backend to click, and I love the creative side of it just as much as the logic.</p>
-              </div>
-              <div>
-                <p className="font-semibold">Embedded Systems</p>
-                <p className="text-gray-600 dark:text-gray-300">Embedded stuff is where I get to nerd out a bit. I like the low-level, hardware meets software kind of thing. I’ve worked with C/C++, Verilog, and FPGAs, and I actually enjoy the debugging and figuring-out-why-it’s-not-doing-what-it-should kind of problems. It’s super satisfying getting something to work exactly how you want it to, especially when it’s all happening under the hood.
-
-</p>
-              </div>
-            </div>
-          </div>
         </motion.div>
-
         {/* Projects Section */}
         <motion.section 
           id="projects" 
@@ -131,13 +140,23 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-16">
             {[
               {
+                title: "Inventory System • Fullstack App",
+                date: "June 2025",
+                description: "A full-stack retail system that simulates both point-of-sale (POS) and inventory management for a fictional garden centre. Features include product and customer handling, real-time stock updates, search and filtering, order tracking, and a responsive UI. Built with a custom PostgreSQL schema and connected through a RESTful API.",
+                tech: ["JavaScript", "React", "node.js", "PostgreSQL", "Fullstack"],
+                image: "/posDisplay.png",
+                video: "/inventoryDemo.mp4",
+                demo: "https://github.com/paigemcdo/garden-centre-inventory-management",
+                //icon: ""
+              },
+              {
                 title: "Colour Sorter • Embedded System",
                 date: "March 2025",
                 description: "An automatic colour sorting system implemented on an STM32 microcontroller. Objects move along a DC motor powered conveyor belt while a camera, using real-time image processing, determines the colour and sets a signal to trigger the corresponding servo powered push arm to dismount the object into its respective bin. Built from scratch with low-level camera interfacing, UART debugging, and motor timing.",
                 tech: ["Embedded C", "STM32", "Embedded System", "Real-Time Processing"],
                 image: "/colourSorter.png",
                 video: "/colourSorterDemo.mp4",
-                demo: "https://github.com/paigemcdo/colour-yeeter",
+                demo: "https://github.com/zuhamujib/Colour-Yeeter",
                 //icon: ""
               },
               {
@@ -147,7 +166,7 @@ export default function Home() {
                 tech: ["Python", "TensorFlow", "Computer Vision", "Deep Learning"],
                 image: "/detectingEeveelutions.png",
                 video: null,
-                demo: "https://github.com/paigemcdo/eeveelutions",
+                demo: null,
                 // icon: "🤖"
               },
               {
@@ -157,7 +176,7 @@ export default function Home() {
                 tech: ["C", "FPGA", "VGA", "Digital Logic", "Game Development"],
                 image: "/donkeyKong.png",
                 video: null,
-                demo: "https://github.com/paigemcdo/fpga-dk",
+                demo: null,
                 // icon: "🎮"
               },
               {
@@ -167,7 +186,7 @@ export default function Home() {
                 tech: ["C++", "OpenStreetMaps API", "Algorithms", "Data Structures"],
                 image: "/zenith.png",
                 video: null,
-                demo: "https://github.com/paigemcdo/zenith",
+                demo: null,
                 // icon: "🗺️"
               }
             ].map((project, index) => (
@@ -207,7 +226,8 @@ export default function Home() {
                     }}
                   />
                 )}
-                  {/* __image demo button__
+                {/* __image demo button__ */}
+                { project.demo && (
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-6">
                       <a
@@ -219,8 +239,9 @@ export default function Home() {
                         View Project →
                       </a>
                     </div>
-                  </div> */}
-                </div>
+                  </div>
+                )}
+              </div>
                 <div className="w-full md:w-1/2 space-y-2">
                   <div className="flex items-center gap-2">
                     {/* <span className="text-2xl">{project.icon}</span> */}
