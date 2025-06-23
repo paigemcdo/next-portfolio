@@ -45,7 +45,7 @@ export default function Home() {
               <span className="block text-violet-600 animate-pulse text-4xl">Take a seat, stay awhile!</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Hello! I'm a Computer Engineering student at the University of Toronto with a love for building… well, just about everything.
+              Hello! I&apos;m a Computer Engineering student at the University of Toronto with a love for building… well, just about everything.
               From low-level embedded systems to fullstack web applications, I&apos;m always chasing that “aha” moment where everything clicks
               into place. When it comes to engineering I&apos;m drawn to both the creative and technical sides of it, and I find the most fun
               happens at the intersection of code, hardware, and design. At the root of it all is a strong desire to grow and learn, as
