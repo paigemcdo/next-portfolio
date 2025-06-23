@@ -46,10 +46,10 @@ export default function Home() {
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               Hello! I'm a Computer Engineering student at the University of Toronto with a love for building… well, just about everything.
-              From low-level embedded systems to fullstack web applications, I’m always chasing that “aha” moment where everything clicks
-              into place. When it comes to engineering I’m drawn to both the creative and technical sides of it, and I find the most fun
+              From low-level embedded systems to fullstack web applications, I&apos;m always chasing that “aha” moment where everything clicks
+              into place. When it comes to engineering I&apos;m drawn to both the creative and technical sides of it, and I find the most fun
               happens at the intersection of code, hardware, and design. At the root of it all is a strong desire to grow and learn, as
-              both an engineer and a person.
+              both an engineer and a person. 
             </p>
             <div className="flex gap-4">
               <a
@@ -96,7 +96,7 @@ export default function Home() {
                 <p className="text-gray-600 dark:text-gray-300">
                   I enjoy working across the whole stack, satisfying my underlying passion for creative design on the frontend
                   and my love for a good puzzle on the backend. I make every design choice with the end user in mind, ensuring
-                  that the experience feels smooth and intuitive. There’s something so satisfying about getting the frontend
+                  that the experience feels smooth and intuitive. There&apos;s something so satisfying about getting the frontend
                   and backend to click, and I love the artistic side of development just as much as the logic behind it.
                 </p>
               </div>
@@ -104,7 +104,7 @@ export default function Home() {
                 <p className="font-semibold">Embedded Systems</p>
                 <p className="text-gray-600 dark:text-gray-300">
                   I enjoy working close to the hardware, satisfying my curiosity for how things work under the hood and my love
-                  for hands-on, ground-up system building. I’ve developed embedded projects using C, C++, and Verilog across
+                  for hands-on, ground-up system building. I&apos;ve developed embedded projects using C, C++, and Verilog across
                   platforms like STM32 and FPGAs. From motor control to real-time signal processing, I focus on writing efficient,
                   reliable code that interfaces seamlessly with hardware.
                 </p>
